@@ -170,7 +170,7 @@ class SwipeablePanel extends React.Component<SwipeablePanelProps, SwipeablePanel
 
     if (newStatus === STATUS.CLOSED) newY = PANEL_HEIGHT;
     else if (newStatus === STATUS.SMALL)
-      newY = this.state.orientation === 'portrait' ? FULL_HEIGHT - 400 : FULL_HEIGHT / 3;
+      newY = this.state.orientation === 'portrait' ? FULL_HEIGHT - 600 : FULL_HEIGHT / 3;
     else if (newStatus === STATUS.LARGE) newY = 0;
 
     this.setState({
@@ -191,7 +191,7 @@ class SwipeablePanel extends React.Component<SwipeablePanelProps, SwipeablePanel
         this.setState({
           showComponent: false,
         });
-      } else this.setState({ canScroll: newStatus === STATUS.LARGE ? true : false });
+      } else this.setState({ canScroll: newStatus === STATUS.LARGE ? false : false });
     });
   };
 
@@ -310,7 +310,7 @@ const SwipeablePanelStyles = StyleSheet.create({
   },
 });
 
-const SMALL_PANEL_CONTENT_HEIGHT = PANEL_HEIGHT - (FULL_HEIGHT - 400) - 25;
+const SMALL_PANEL_CONTENT_HEIGHT = PANEL_HEIGHT - (FULL_HEIGHT - 600) - 25;
 const LARGE_PANEL_CONTENT_HEIGHT = PANEL_HEIGHT - 25;
 
 export { SwipeablePanel, LARGE_PANEL_CONTENT_HEIGHT, SMALL_PANEL_CONTENT_HEIGHT };
